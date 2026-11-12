@@ -1,0 +1,18 @@
+name: webminh27
+
+services:
+  webmin:
+    image: webmin-lab:2.670
+    ports:
+      - "127.0.0.1:18440:10000"
+    mem_limit: 512m
+    init: true
+    labels:
+      lab: WEBMIN-H27-SESSIONDB
+    restart: "no"
+    networks:
+      - webminh27
+
+networks:
+  webminh27:
+    driver: bridge
